@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Application</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 50vh;
+        margin: 0 180px;
+    }
+    #form {
+        width: 400px;
+        height: 270px;
+        border: 2px solid black;
+    }
+    .outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 30px;
+    }
+    .inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;  
+    }
+    #form .outer .inner div {
+        margin: 0px 10px;
+        width: 150px;
+    }
+    #form .outer .inner div input,select{ 
+        width: 150px;
+        height: 30px;
+    }
+    button {
+        font-size: 15px;
+        height: 30px;
+        width: 250px;
+    }
+</style>
+<body>
+    <div id="form">
+    <form action="/create" Method="POST" auto-complete="off">
+        <div class="outer">
+        <div class="inner">
+            <div>
+               <label class="label">Enter Student name: </label>
+            </div>
+            <div>
+               <input type="text" name="student_name"/> <br>
+            </div>
+        </div>
+        <div class="inner">    
+            <div>
+                <label class="label"> Enter email: </label>
+            </div>
+            <div>
+                <input type="text" name="email" /> <br>
+            </div>
+        </div>
+        <div class="inner">
+            <div>
+               <label class="label">Select courses: </label>
+            </div>
+            <div>
+               <select name="course_name">
+                <option value="">-- Select --</option>
+                <th:block th:each="course : ${courses}"> 
+                    <option th:value="${course}" th:text="${course}"></option>
+                </th:block>    
+               </select> <br>
+            </div>
+       </div>
+    </div>
+        <div class="outer">   
+            <button type="submit"> Submit</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

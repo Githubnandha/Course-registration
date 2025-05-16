@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thmeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enrolled student</title>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <th>Student name</th>
+    <th>Email</th>
+    <th>Course</th>
+  </tr>
+    <tr th:each="student : ${students}">
+       <td th:text="${student.student_name}"></td>
+       <td th:text="${student.email}"></td>
+       <td th:text="${student.course_name}"></td>
+   </tr>
+</table>
+</body>
+</html>

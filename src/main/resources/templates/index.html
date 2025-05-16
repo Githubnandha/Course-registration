@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<style>
+   #main-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  
+    }
+   .sub-div {
+      display: flex;
+      flex-direction : row;
+   }
+   .buttons {
+      margin: 10px;
+   }
+   button {
+       height: 40px;
+       width: 100px;
+   }
+</style>
+<body>
+   <div id="main-div">
+     <div class="heading">
+       <h2>Course Registration</h2>
+     </div>
+     <div class="sub-div">
+        <div class="buttons">
+            <form action="/application">
+               <button>Create</button>
+            </form>
+        </div>
+        <div class="buttons">
+            <form action="/courses">
+                <button>Courses</button>
+            </form>
+
+        </div>
+        <div class="buttons">
+            <form action="/enroll">
+               <button>Enrollment</button>
+            </form>
+        </div>
+     </div>
+     </div>
+</body>
+</html>
